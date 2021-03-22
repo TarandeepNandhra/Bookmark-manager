@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pg'
 gem 'sinatra'
 gem 'webrick', '~> 1.7'
 
