@@ -1,6 +1,24 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/taran/makers/week4/bookmark/spec/bookmarks_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/taran/makers/week4/bookmark/spec/features/hello_spec.rb": {
         "lines": [
           1,
@@ -10,8 +28,20 @@
           null,
           null
         ]
+      },
+      "/Users/taran/makers/week4/bookmark/spec/features/view_bookmarks_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1616426622
+    "timestamp": 1616429556
   }
 }
