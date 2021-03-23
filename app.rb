@@ -9,6 +9,7 @@ class BookmarkApp < Sinatra::Base
   end
 
   get '/' do
+    @bookmarks = Bookmarks.new_bookmarks
     erb :index
   end
 

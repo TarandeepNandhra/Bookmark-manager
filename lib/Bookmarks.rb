@@ -3,7 +3,11 @@ require_relative './db'
 class Bookmarks
 
   def self.instance
-    @bookmarks ||= Bookmarks.new
+    @bookmarks 
+  end
+
+  def self.new_bookmarks
+    @bookmarks = Bookmarks.new
   end
 
   def display_bookmarks
