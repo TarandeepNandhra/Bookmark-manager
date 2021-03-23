@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/bookmarks.rb'
+require './database_connection_setup'
 
 class BookmarkApp < Sinatra::Base
 
@@ -8,7 +9,6 @@ class BookmarkApp < Sinatra::Base
   end
 
   get '/' do
-    @bookmarks = Bookmarks.new_bookmarks
     erb :index
   end
 
@@ -17,8 +17,6 @@ class BookmarkApp < Sinatra::Base
   end
 
   post '/add-bookmark' do
-    p "print parameters"
-    p params
     @bookmarks.add_bookmark(params[:add_bookmark_field])
     redirect '/'
   end

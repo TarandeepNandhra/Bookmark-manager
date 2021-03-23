@@ -1,16 +1,9 @@
-require_relative 'db'
+require_relative './db'
 
 class Bookmarks
-  
-  def initialize
-  end
 
   def self.instance
-    @bookmarks
-  end
-
-  def self.new_bookmarks
-    @bookmarks = Bookmarks.new
+    @bookmarks ||= Bookmarks.new
   end
 
   def display_bookmarks
@@ -20,14 +13,10 @@ class Bookmarks
   end
 
   def get_bookmarks
-    DB.setup('bookmark_manager')
-    DB.query( "SELECT * FROM bookmarks_1 ORDER BY id" )
+    DB.query("SELECT * FROM bookmarks_1 ORDER BY id;")
   end
 
   def add_bookmark(url)
-    sql = "INSERT INTO bookmarks_1 (url) VALUES ('#{url}');"
-    p sql
-    DB.setup('bookmark_manager')
-    DB.query( sql )
+    DB.query("INSERT INTO bookmarks_1 (url) VALUES ('#{url}');")
   end
 end
