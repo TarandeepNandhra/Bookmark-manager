@@ -16,4 +16,11 @@ class BookmarkApp < Sinatra::Base
     erb :bookmarks
   end
 
+  post '/add-bookmark' do
+    p "print parameters"
+    p params
+    @bookmarks.add_bookmark(params[:add_bookmark_field])
+    redirect '/'
+  end
+
 end

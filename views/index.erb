@@ -11,8 +11,14 @@
   <body>
     Hello!
 
+    <form action='/add-bookmark' method='post'>
+      <input type='text' name="add_bookmark_field">
+      <input type='submit' name="Add Bookmark" value="Add Bookmark">
+    </form>
+    
+
     <form action='/bookmarks' method='get'>
-      <input type='submit' name='View Bookmarks'>
+      <input type='submit' name='View Bookmarks' value="View Bookmarks">
     </form>
   </body>
 </html>

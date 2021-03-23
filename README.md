@@ -64,7 +64,7 @@ I would like to add the site's address and title to bookmark manager
 > Refactor to use a model - which will involve a unit test
 
 #### 4. Setting up a database 
-- [x]] Install the `postgresql` command-line package via Homebrew (use the command `brew`).
+- [x] Install the `postgresql` command-line package via Homebrew (use the command `brew`).
 - [x] Start postgres and set it to run automatically when your computer starts. (See the instructions in the output that brew shows when it's installing postgres.)
 - [x] Check your installation by running `psql` in the terminal. Use the resources below to understand any errors that you see.
 - [x] Use the `CREATE DATABASE` command in `psql` to set up a PostgreSQL database with the same name as your computer username, e.g. `timmy507`. PostgreSQL will connect to this database on startup.

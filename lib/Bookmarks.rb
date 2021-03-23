@@ -1,15 +1,8 @@
-require 'pg'
+require_relative 'db'
 
 class Bookmarks
-  BOOKMARKS_ARRAY = [
-    ['Ruby-Doc', 'https://ruby-doc.org/' ],
-    ['GitHub', 'https://github.com/'],
-    ['Han Solo', 'https://www.starwars.com/databank/han-solo'],
-    ['Japanese Jazz Mix' , 'https://youtu.be/kNRIFhkYONc']
-  ]
   
   def initialize
-    @bookmarks_data = BOOKMARKS_ARRAY
   end
 
   def self.instance
@@ -22,19 +15,19 @@ class Bookmarks
 
   def display_bookmarks
     display = []
-    @bookmarks_data.each { |bookmark| display << "#{bookmark[0]} | #{bookmark[1]}"}
+    get_bookmarks.each { |bookmark| display << "#{bookmark['id']} | #{bookmark['url']}"}
     display.join("<br>")
   end
 
-  def sql_bookmarks
-    database = PG.connect( dbname: 'bookmark_manager')
-    database.exec( "SELECT * FROM bookmarks_1 ORDER BY id" ) do |result|
-      display = "ID | URL <br>"
-      result.each do |row|
-        display << "%1d | %s<br>" %
-          row.values_at('id', 'url')
-      end  
-      display[0..-5]
-    end 
+  def get_bookmarks
+    DB.setup('bookmark_manager')
+    DB.query( "SELECT * FROM bookmarks_1 ORDER BY id" )
+  end
+
+  def add_bookmark(url)
+    sql = "INSERT INTO bookmarks_1 (url) VALUES ('#{url}');"
+    p sql
+    DB.setup('bookmark_manager')
+    DB.query( sql )
   end
 end
