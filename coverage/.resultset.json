@@ -10,14 +10,18 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/taran/makers/week4/bookmark/spec/features/hello_spec.rb": {
+      "/Users/taran/makers/week4/bookmark/spec/features/delete_bookmark_spec.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -31,7 +35,7 @@
           1,
           1,
           1,
-          1,
+          null,
           1,
           null,
           null
@@ -40,10 +44,7 @@
       "/Users/taran/makers/week4/bookmark/spec/unit/bookmarks_spec.rb": {
         "lines": [
           1,
-          1,
           null,
-          1,
-          4,
           1,
           null,
           1,
@@ -51,6 +52,7 @@
           1,
           null,
           null,
+          1,
           1,
           1,
           1,
@@ -62,21 +64,21 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/taran/makers/week4/bookmark/spec/setup_test_db.rb": {
-        "lines": [
+          1,
           1,
           null,
           1,
           1,
           1,
           1,
-          1,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -108,6 +110,6 @@
         ]
       }
     },
-    "timestamp": 1616538726
+    "timestamp": 1616619170
   }
 }

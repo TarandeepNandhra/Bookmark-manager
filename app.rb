@@ -1,25 +1,22 @@
 require 'sinatra/base'
 require './lib/bookmarks.rb'
+# sets up production or test database
 require './database_connection_setup'
 
 class BookmarkApp < Sinatra::Base
-
-  before do
-    @bookmarks = Bookmarks.instance
-  end
+  enable :method_override
 
   get '/' do
-    @bookmarks = Bookmarks.new_bookmarks
     erb :index
   end
 
-  get '/bookmarks' do
-    erb :bookmarks
-  end
-
   post '/add-bookmark' do
-    @bookmarks.add_bookmark(params[:add_bookmark_field])
+    Bookmarks.add_bookmark(url: params[:add_bookmark_url], title: params[:add_bookmark_title])
     redirect '/'
   end
 
+  delete '/bookmarks/:id' do
+    Bookmarks.delete(id: params[:id])
+    redirect '/'
+  end
 end
