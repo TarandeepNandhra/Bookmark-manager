@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title></title>
+  </head>
+
+  <body>
+    <%# Can also set title and url to the value of the text fields %>
+    <h1>Update bookmark </h1>
+
+    <h3> Current title: <%= @current_bookmark.title %> </h3>
+    <h3> Current url: <%= @current_bookmark.url %> </h3>
+
+    <form action="/bookmarks/<%= @current_bookmark.id %>" method="post">
+      <input type="hidden" name="_method" value="PATCH" />
+
+      <label for='title'>Enter title</label>
+      <input type='text' id='title' name="update_bookmark_title">
+
+      <label for='url'>Enter url</label>
+      <input type='text' id ='url'  name="update_bookmark_url">
+
+      <input type='submit' name='Update Bookmark'>
+    </form>
+
+  </body>
+</html>

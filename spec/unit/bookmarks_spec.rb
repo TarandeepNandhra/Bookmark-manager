@@ -31,6 +31,24 @@ describe Bookmarks do
       expect(Bookmarks.get_bookmarks.length).to eq 2
     end
   end
+  describe '.update' do
+    it 'updates a bookmarks title and url' do
+      bookmark = Bookmarks.add_bookmark(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
+      updated = Bookmarks.update(id: bookmark.id, url: "http://taran.co.uk", title: "Tarans website")
+      expect(bookmark.id).to eq(updated.id)
+      expect(updated.url).to eq("http://taran.co.uk")
+      expect(updated.title).to eq("Tarans website")
+    end
+  end
+  describe '.find' do
+    it 'finds a particular bookmark object' do
+      bookmark = Bookmarks.add_bookmark(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
+      selected_bookmark = Bookmarks.find(id: bookmark.id)
+      expect(selected_bookmark.id).to eq(bookmark.id)
+      expect(selected_bookmark.url).to eq("http://www.testbookmark.com")
+      expect(selected_bookmark.title).to eq("Test Bookmark")
+    end
+  end
 end
 
   
